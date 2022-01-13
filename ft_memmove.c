@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danisanc <danisanc@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: alessa <alessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 21:04:23 by danisanc          #+#    #+#             */
-/*   Updated: 2021/12/06 16:38:05 by danisanc         ###   ########.fr       */
+/*   Updated: 2022/01/12 03:23:18 by alessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memmove( void *dst, const void *src, size_t len)
 		i++;
 	}
 	temp[i] = '\0';
-	while (d[k] != '\0' && len > 0)
+	while (len > 0)
 	{
 		d[k] = temp[k];
 		k++;

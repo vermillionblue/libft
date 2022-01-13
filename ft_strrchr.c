@@ -6,7 +6,7 @@
 /*   By: alessa <alessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:59:33 by danisanc          #+#    #+#             */
-/*   Updated: 2021/12/10 13:03:57 by alessa           ###   ########.fr       */
+/*   Updated: 2022/01/12 03:46:43 by alessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen((char *)s);
 	while (len >= 0)
 	{
-		if (s[len] == c)
+		if (s[len] == (char)c)
 			return ((p + len));
 		len--;
 	}

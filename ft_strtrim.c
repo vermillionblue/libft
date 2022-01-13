@@ -6,7 +6,7 @@
 /*   By: alessa <alessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 00:18:52 by danisanc          #+#    #+#             */
-/*   Updated: 2021/12/14 11:41:17 by alessa           ###   ########.fr       */
+/*   Updated: 2022/01/13 11:07:21 by alessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,60 +23,41 @@ static int	charinset(char const *set, char c)
 	{
 		if (set[i] == c)
 			return (1);
-		else
-			i++;
+		i++;
 	}
 	return (0);
-}
-
-static int	count_endstr(char const *s1, char const *set)
-{
-	int		len;
-
-	len = ft_strlen((char *)s1);
-	while (len > 0 && s1[len - 1])
-	{
-		if (charinset(set, s1[len - 1]))
-			len--;
-		else
-			break ;
-	}
-	return (len);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*p;
-	int		b;
-	int		k;
-	int		len;
+	size_t	start;
+	size_t	end;
+	int		i;
 
-	k = 0;
-	b = 0;
-	len = count_endstr(s1, set);
-	while (s1[k])
+	start = 0;
+	i = 0;
+	end = ft_strlen(s1);
+	while (s1[start] && charinset(set, s1[start]))
+		start++;
+	while (end > start && charinset(set, s1[end - 1]))
+		end--;
+	p = malloc(end - start + 1);
+	if (!p)
+		return (NULL);
+	while (start < end)
 	{
-		if (charinset(set, s1[k]))
-			k++;
-		else
-			break ;
+		p[i] = s1[start];
+		start++;
+		i++;
 	}
-	p = malloc(len + 1);
-	while (s1[k] && k < len)
-	{
-		p[b] = s1[k];
-		k++;
-		b++;
-	}
-	p[b] = '\0';
+	p[i] = '\0';
 	return (p);
 }
 
 // int main(void)
 // {
-//    char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-
-//    char *p = ft_strtrim(s1, " ");
-//    printf("%s\n", p);
-//    free(p);
+// 	char * s = ft_strtrim("   xxxtripouille", " x");
+//    printf("%s\n", s);
+//    free(s);
 // }

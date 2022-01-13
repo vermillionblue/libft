@@ -6,7 +6,7 @@
 /*   By: alessa <alessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:30:20 by danisanc          #+#    #+#             */
-/*   Updated: 2021/12/10 13:23:56 by alessa           ###   ########.fr       */
+/*   Updated: 2022/01/12 03:46:50 by alessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 	i = ft_strlen((char *)s) + 1;
 	while (i > 0)
 	{
-		if (s[k] == c)
+		if (s[k] == (char)c)
 			return ((p + k));
 		i--;
 		k++;
@@ -34,13 +34,8 @@ char	*ft_strchr(const char *s, int c)
 }
 
 // int main () {
-//   char		str2[] = "bonjour";
-//   char *str;
-// 		char *str3;
-
-//   str = strchr(str2, 'b');
-// 		str3 = ft_strchr(str2, 'b');
-//   printf("%s:\n", str);
-// 		printf("%s:\n", str3);
+// char s[] = "tripouille";
+//   printf("%s:\n", ft_strchr(s, 't' + 256));
+// 		printf("%s:\n", strchr(s, 't' + 256));
 //   return(0);
 // }
