@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alessa <alessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:01:11 by danisanc          #+#    #+#             */
-/*   Updated: 2022/02/17 23:31:47 by alessa           ###   ########.fr       */
+/*   Updated: 2022/03/23 22:42:14 by alessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
-#include <ctype.h>
 
-static int	ft_pow(int base, int exp)
+static long int	ft_pow(long int base, long int exp)
 {
 	char	temp;
 
@@ -35,7 +32,7 @@ static int	ft_pow(int base, int exp)
 	return (base);
 }
 
-static int	minusorplus(const char *str, int count)
+static long int	minusorplus(const char *str, long int count)
 {
 	if (str[0] == '-')
 		return (count * -1);
@@ -43,7 +40,7 @@ static int	minusorplus(const char *str, int count)
 		return (count);
 }
 
-static int	numlen(const char *str)
+static	int	numlen(const char *str)
 {
 	int	i;
 	int	k;
@@ -71,7 +68,7 @@ static char	*correctindex(const char *str)
 	return ((char *)str);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atol(const char *str)
 {
 	int						n;
 	int						i;
@@ -95,11 +92,3 @@ int	ft_atoi(const char *str)
 	}
 	return (minusorplus(str, count));
 }
-
-// int main(void)
-// {
-//     char num[] = "-2147483648";
-//     printf("%d\n", ft_atoi(num));
-//     printf("%d\n", atoi(num));
-//     return(0);
-// }

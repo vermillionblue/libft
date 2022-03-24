@@ -72,13 +72,13 @@ static char	*itoa_iter(char *p, int n, int x)
 static char	*edgecase(void)
 {
 	char	*p;
-	char *x;
-	int i;
+	char	*x;
+	int		i;
 
 	i = 0;
 	p = malloc(12);
 	x = "-2147483648";
-	while(i < 12)
+	while (i < 12)
 	{
 		p[i] = x[i];
 		i++;

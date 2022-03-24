@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danisanc <danisanc@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: alessa <alessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:58:25 by danisanc          #+#    #+#             */
-/*   Updated: 2021/12/06 02:01:17 by danisanc         ###   ########.fr       */
+/*   Updated: 2022/01/13 12:45:55 by alessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*current;
-
-	current = lst;
-	while (current->next != NULL)
-		current = current->next;
-	return (current);
+	if (!lst)
+		return (NULL);
+	while (!lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 //void printList(t_list* head)
